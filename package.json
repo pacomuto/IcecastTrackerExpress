@@ -1,6 +1,6 @@
 {
-  "name": "HelloWorld",
-  "version": "0.0.0",
+  "name": "IcecastTrackerExpress",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -13,5 +13,24 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Tracker for Icecast in NodeJs Express",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sistemas-Multimedia/Icecast-tracker.git"
+  },
+  "keywords": [
+    "Icecast",
+    "Tracker",
+    "NodeJs",
+    "Express"
+  ],
+  "author": "Francisco Muñoz Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sistemas-Multimedia/Icecast-tracker/issues"
+  },
+  "homepage": "https://github.com/Sistemas-Multimedia/Icecast-tracker"
 }

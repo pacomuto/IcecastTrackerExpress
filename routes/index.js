@@ -3,15 +3,20 @@ var router = express.Router();
 var url = require('url');
 
 /* Array of icecast servers */
-var urls = ['http://ugkkf004b1ec.giaku.koding.io:8000', 'http://150.214.150.68:4551'];
+var urls = ['http://ugkkf004b1ec.giaku.koding.io:8000', 'http://150.214.150.68:4551','http://streaming.p2psp.org:8000'];
 
 /* Base url */
 router.get('/', function(req, res, next) {
 
-    console.log(getAllMedia());
+    console.log("Icecast Servers");
+    console.log(urls);
+
+    console.log("Media");
+    var allMedia = getAllMedia();
+    console.log(allMedia);
     
-    // Print an array with all media with the current listeners
-    res.send(getAllMedia());
+    // Print an array with all servers and an array with all media with the current listeners
+    res.send(urls.concat(allMedia));
 });
 
 /* Path with any content (Except the base url) */
@@ -71,10 +76,10 @@ function getMinListenerMedia(name){
                     
                 }
             }else{
-                console.log("La estructura no es correcta");
+                console.log("The XSL structure from "+urls[i]+"/status2.xsl is incorrect");
             }
         }catch(e){
-            console.log("EXCEPCION" + e);
+            console.log("EXCEPTION: " + e);
         }
     }
     
@@ -103,10 +108,10 @@ function getAllMedia(){
                     mountPoints.push([mountPointUrl, mountPountListeners]);
                 }
             }else{
-                console.log("La estructura no es correcta");
+                console.log("The XSL structure from "+urls[i]+"/status2.xsl is incorrect");
             }
         }catch(e){
-            console.log("EXCEPCION" + e);
+            console.log("EXCEPTION: " + e);
         }
     }
     
